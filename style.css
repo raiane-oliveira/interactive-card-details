@@ -27,8 +27,9 @@ html {
 
 .card-front,
 .card-back {
-    width: 450px;
-    height: 245px;
+    width: 25rem;
+    height: 13.6rem;
+    border-radius: 10px;
 }
 
 .card-front {
@@ -143,6 +144,10 @@ html {
     color: hsl(0, 0%, 77%);
 }
 
+.error-message {
+    display: none;
+}
+
 .btn-card {
     grid-area: c-btn;
     height: 2.5rem;
@@ -163,4 +168,75 @@ html {
 
 .completed-state {
     display: none;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+    html {
+        font-size: 85%;
+    }
+
+    .card-back,
+    .card-front {
+        background-size: contain;
+    }
+}
+
+@media (max-width: 1080px) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media (max-width: 872px) {
+    html,
+    body {
+        background-size: 100% 30%;
+        background-position: top;
+        background-repeat: repeat-x;
+        font-size: 18px;
+    }
+
+    #container {
+        align-items: normal;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .card-container {
+        margin-top: 8rem;
+    }
+
+    .card-back {
+        position: absolute;
+        top: -140px;
+        margin-left: 5rem;
+    }
+
+    .card-front {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 612px) {
+    html {
+        font-size: 82%;
+    }
+
+    .card-container {
+        margin-top: 0;
+    }
+
+    .card-back {
+        top: -105px;
+    } 
+
+}
+
+@media (max-width: 443px) {
+    html {
+        font-size: 60%;
+    }
 }

@@ -40,22 +40,27 @@
 					<div class="card-name-container">
 						<label for="card-name">Cardholder Name</label>
 						<input id="card-name" class="card-name" placeholder="e.g. Jane Appleseed">
+						<span class="error-message"></span>
 					</div>
 
 					<div class="card-number-container">
 						<label for="card-number">Card Number</label>
 						<input id="card-number" class="card-number" placeholder="e.g. 1234 5678 9123 0000">
+						<span class="error-message"></span>
 					</div>
 
 					<div class="card-exp-date-container">
 						<label for="card-exp-date">Exp. Date (MM/YY)</label>
 						<input maxlength="2" data-date="mm" type="text" class="card-exp-date" id="card-exp-date" placeholder="MM">
+						<span class="error-message"></span>
 						<input maxlength="2" data-date="yy" type="text" class="card-exp-date" placeholder="YY">
+						<span class="error-message"></span>
 					</div>
 
 					<div class="card-cvc-container">
 						<label for="card-cvc">CVC</label>
 						<input maxlength="3" type="text" class="card-cvc" id="card-cvc" placeholder="e.g. 123">
+						<span class="error-message"></span>
 					</div>
 
 					<button class="btn-card">Confirm</button>
