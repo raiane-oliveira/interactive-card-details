@@ -20,6 +20,16 @@ html {
     gap: 10rem;
 }
 
+.card-container {
+    position: relative;
+}
+
+.card-front,
+.card-back {
+    width: 450px;
+    height: 245px;
+}
+
 .card-front {
     background: url("images/bg-card-front.png") no-repeat center;
     margin-bottom: 2rem;
@@ -50,18 +60,24 @@ html {
     align-self: end;
     text-transform: uppercase;
     letter-spacing: .1rem;
-    font-size: .8rem;
+    font-size: .9rem;
+}
+
+#card-front-date {
+    justify-self: end;
 }
 
 .card-back {
     background: url("images/bg-card-back.png") no-repeat center;
     margin-left: 10rem;
+    position: relative;
 }
 
-.card-front,
-.card-back {
-    width: 450px;
-    height: 245px;
+#card-back-cvc {
+    position: absolute;
+    top: 6rem;
+    right: 3.5rem;
+    color: white;
 }
 
 .completed-state {
