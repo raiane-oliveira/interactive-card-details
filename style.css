@@ -8,6 +8,60 @@ body,
 html {
     height: 100%;
     background: url("images/bg-main-desktop.png") no-repeat left / auto 100%;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+}
+
+#container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.card-front {
+    background: url("images/bg-card-front.png") no-repeat center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    color: white;
+
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo logo"
+                         "logo logo"
+                         "number number";
+}
+
+.card-front img {
+    grid-area: logo;
+}
+
+#card-front-number {
+    grid-area: number;
+    align-self: end;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+}
+
+#card-front-name,
+#card-front-date {
+    align-self: end;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    font-size: .8rem;
+}
+
+.card-back {
+    background: url("images/bg-card-back.png") no-repeat center;
+    margin-left: 10rem;
+}
+
+.card-front,
+.card-back {
+    width: 450px;
+    height: 245px;
 }
 
 .completed-state {
