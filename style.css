@@ -114,10 +114,6 @@ html {
     width: 4.5rem;
 }
 
-.card-cvc {
-    width: 100%;
-}
-
 .form-card label {
     display: block;
     text-transform: uppercase;
@@ -171,9 +167,13 @@ html {
 }
 
 /* Responsive */
-@media (max-width: 1400px) {
+@media (max-width: 1390px) {
     html {
-        font-size: 85%;
+        font-size: 16px;
+    }
+
+    #container {
+        gap: 3.5rem;
     }
 
     .card-back,
@@ -183,12 +183,6 @@ html {
 }
 
 @media (max-width: 1080px) {
-    html {
-        font-size: 70%;
-    }
-}
-
-@media (max-width: 872px) {
     html,
     body {
         background-size: 100% 30%;
@@ -206,6 +200,7 @@ html {
 
     .card-container {
         margin-top: 8rem;
+        align-self: center;
     }
 
     .card-back {
@@ -218,33 +213,89 @@ html {
         position: relative;
         z-index: 2;
     }
+
+    .card-cvc {
+        width: 100%;
+    }
 }
 
-@media (max-width: 612px) {
-    html {
-        font-size: 82%;
+@media (max-width: 650px) {
+    #container {
+        padding: 1rem;
+        gap: 1rem;
     }
 
     .card-container {
-        margin-top: 0;
+        margin-top: 2rem;
+        align-self: normal;
+    }
+
+    .card-container {
+        font-size: 75%;
+        margin-top: -4rem;
+    }
+
+    .card-front,
+    .card-back {
+        width: 25em;
+        height: 13.6em;
     }
 
     .card-back {
-        top: -105px;
-    } 
-
-}
-
-@media (max-width: 443px) {
-    html {
-        font-size: 60%;
+        top: -104px;
+        margin-left: 5em;
     }
 
-    .card-back {
-        top: -75px;
+    .card-front img {
+        width: 3.5rem;
+    }
+    
+    #card-front-number {
+        font-size: 1.6em;
+    }
+
+    #card-front-name,
+    #card-front-date {
+        font-size: .9em;
     }
 
     #card-back-cvc {
-        top: 5.5rem;
+        top: 6.1em;
+        right: 3.5em;
+    }
+}
+
+@media (max-width: 435px) {
+    html {
+        font-size: 95%;
+    }
+
+    .card-container {
+        font-size: 65%;
+        margin-top: -7rem;
+    }
+
+    .card-back {
+        top: -90px;
+    }
+}
+
+@media (max-width: 374px) {
+    .card-container {
+        font-size: 55%;
+        margin-top: -5rem;
+    }
+
+    .card-front img {
+        width: 3rem;
+    }
+    
+    #card-front-number {
+        font-size: 1.5em;
+    }
+
+    #card-front-name,
+    #card-front-date {
+        font-size: .9em;
     }
 }
