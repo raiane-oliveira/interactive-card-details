@@ -150,6 +150,7 @@ html {
 .btn-card {
     grid-area: c-btn;
     height: 2.5rem;
+    width: 100%;
     border-radius: .3rem;
     color: white;
     background-color: hsl(278, 68%, 11%);
@@ -167,6 +168,25 @@ html {
 
 .completed-state {
     display: none;
+    text-align: center;
+}
+
+.completed-state h1 {
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-size: 2rem;
+    margin: 2rem 0 1rem 0;
+    color: hsl(278, 68%, 11%);
+}
+
+.completed-state p {
+    color: hsl(279, 6%, 55%);
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+
+.completed-state button {
+    font-size: 1.2rem;
 }
 
 /* Responsive */
