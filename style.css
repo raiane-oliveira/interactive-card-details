@@ -142,6 +142,9 @@ html {
 
 .error-message {
     display: none;
+    color: hsl(0, 100%, 66%);
+    font-size: .8rem;
+    padding-top: .5rem;
 }
 
 .btn-card {
