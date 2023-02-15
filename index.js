@@ -51,10 +51,9 @@ formCard.addEventListener("submit", (event) => {
     event.preventDefault()
     validateEntriesCard()
 
-    if (
-        formCardName.value && formCardNumber.value && formCardCVC.value &&
-        datesWithoutErros
-    ) {
+    let noErrors = formCardName.value && formCardNumber.value && formCardCVC.value &&
+                  datesWithoutErros
+    if (noErrors) {
         formCard.style.display = "none"
         document.querySelector(".completed-state").style.display = "block"
     }
