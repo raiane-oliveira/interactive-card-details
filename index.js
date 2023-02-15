@@ -51,6 +51,7 @@ formCard.addEventListener("submit", (event) => {
 })
 
 function validateEntriesCard() {
+
     if (!formCardName.value) {
         formCardName.style.border = "1px solid hsl(0, 100%, 66%)"
         document.querySelector(".card-name-container .error-message").style.display = "block"
@@ -75,7 +76,26 @@ function validateEntriesCard() {
             document.querySelector(".card-exp-date + .error-message").style.display = "block"
             document.querySelector(".card-exp-date + .error-message").innerHTML = "Can't be blank" 
         }
+
+        if (isNaN(date.value)) {
+            date.style.border = "1px solid hsl(0, 100%, 66%)"
+            document.querySelector(".card-exp-date + .error-message").style.display = "block"
+            document.querySelector(".card-exp-date + .error-message").innerHTML = "Wrong format, numbers only" 
+        }
     })
+
+    if (isNaN(formCardNumber.value)) {
+        formCardNumber.style.border = "1px solid hsl(0, 100%, 66%)"
+        document.querySelector(".card-number-container .error-message").style.display = "block"
+        document.querySelector(".card-number-container .error-message").innerHTML = "Wrong format, numbers only"
+    }
+    
+    if (isNaN(formCardCVC.value)) {
+        formCardCVC.style.border = "1px solid hsl(0, 100%, 66%)"
+        document.querySelector(".card-cvc-container .error-message").style.display = "block"
+        document.querySelector(".card-cvc-container .error-message").innerHTML = "Wrong format, numbers only"
+        
+    }
 }
 
 function clearErrorMessages() {
