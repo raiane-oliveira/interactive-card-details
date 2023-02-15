@@ -78,7 +78,7 @@ function validateEntriesCard() {
         document.querySelector(".card-cvc-container .error-message").innerHTML = "Can't be blank"
     }
 
-    if (isNaN(formCardNumber.value.trim().replace(" ", ""))) {
+    if (isNaN(formCardNumber.value.replace(" ", "").trim())) {
         formCardNumber.style.border = "1px solid hsl(0, 100%, 66%)"
         document.querySelector(".card-number-container .error-message").style.display = "block"
         document.querySelector(".card-number-container .error-message").innerHTML = "Wrong format, numbers only"
