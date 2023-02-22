@@ -11,11 +11,9 @@ const formCardName = document.querySelector(".card-name");
 const formCardNumber = document.querySelector(".card-number");
 const formCardDates = document.querySelectorAll(".card-exp-date");
 const formCardCVC = document.querySelector(".card-cvc");
-const btnSubmitForm = document.querySelector(".btn-card");
 
 let month = "00",
     year = "00";
-let datesWithoutErros = true;
 
 formCard.addEventListener("keyup", (event) => {
     clearErrorMessages();
@@ -57,12 +55,8 @@ function getValuesOfInputsForm(element) {
     }
 
     if (isCardDateInput) {
-        if (element.dataset.date === "mm") {
-            month = element.value.trim();
-        } else if (element.dataset.date === "yy") {
-            year = element.value.trim();
-        }
-
+        month = element.dataset.date === "mm" ? element.value.trim() : month;
+        year = element.dataset.date === "yy" ? element.value.trim() : year;
         cardFrontDate.innerHTML = `${month}/${year}`;
     }
 
