@@ -73,7 +73,9 @@ function validateEntriesCard() {
         );
 
         // Checks empty inputs
-        if (!input.value.trim() && !input.className.includes("btn-card")) {
+        let isInputEntryEmpty =
+            !input.value.trim() && !input.className.includes("btn-card");
+        if (isInputEntryEmpty) {
             input.style.border = "1px solid hsl(0, 100%, 66%)";
             inputContainer.style.display = "block";
             inputContainer.innerHTML = "Can't be blank";
@@ -85,7 +87,7 @@ function validateEntriesCard() {
             input.className.includes("card-number") ||
             input.className.includes("card-cvc")
         ) {
-            if (isNaN(input.value.trim().replace(" ", ""))) {
+            if (isNaN(input.value.trim().replaceAll(" ", ""))) {
                 input.style.border = "1px solid hsl(0, 100%, 66%)";
                 inputContainer.style.display = "block";
                 inputContainer.innerHTML = "Wrong format, numbers only";
