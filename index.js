@@ -77,7 +77,8 @@ function validateEntriesCard() {
         // Checks input numbers
         if (
             input.className.includes("card-number") ||
-            input.className.includes("card-cvc")
+            input.className.includes("card-cvc") ||
+            input.className.includes("card-exp-date")
         ) {
             if (isNaN(input.value.trim().replaceAll(" ", ""))) {
                 input.style.border = "1px solid hsl(0, 100%, 66%)";
