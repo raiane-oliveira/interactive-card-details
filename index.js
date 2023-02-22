@@ -120,6 +120,10 @@ function returnToOriginalForm() {
         input.value = "";
     });
 
+    resetCardContent();
+}
+
+function resetCardContent() {
     cardContainer.querySelectorAll("p").forEach((paragraph) => {
         switch (paragraph.id) {
             case "card-front-name":
