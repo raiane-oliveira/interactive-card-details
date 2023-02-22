@@ -17,9 +17,7 @@ let month = "00",
 
 formCard.addEventListener("keyup", (event) => {
     clearErrorMessages();
-    const element = event.target;
-
-    displayEntryValuesOnCard(element);
+    displayEntryValuesOnCard(event.target);
 });
 
 formCard.addEventListener("submit", (event) => {
@@ -37,32 +35,26 @@ document
     .addEventListener("click", returnToOriginalForm);
 
 function displayEntryValuesOnCard(element) {
-    let isCardNameInput = element.className.includes("card-name");
-    let isCardNumberInput = element.className.includes("card-number");
-    let isCardDateInput = element.className.includes("card-exp-date");
-    let isCardCVCInput = element.className.includes("card-cvc");
-
-    if (isCardNameInput) {
+    if (element.className.includes("card-name")) {
         cardFrontName.innerHTML = formCardName.value.trim()
             ? element.value
             : "Jane Appleseed";
     }
 
-    if (isCardNumberInput) {
+    if (element.className.includes("card-number")) {
         cardFrontNumber.innerHTML = formCardNumber.value.trim()
             ? element.value
             : "0000 0000 0000 0000";
     }
 
-    if (isCardDateInput) {
+    if (element.className.includes("card-exp-date")) {
         month = element.dataset.date === "mm" ? element.value.trim() : month;
         year = element.dataset.date === "yy" ? element.value.trim() : year;
         cardFrontDate.innerHTML = `${month}/${year}`;
     }
 
-    if (isCardCVCInput) {
+    if (element.className.includes("card-cvc"))
         cardBackCVC.innerHTML = formCardCVC.value ? element.value : "000";
-    }
 }
 
 function validateEntriesCard() {
