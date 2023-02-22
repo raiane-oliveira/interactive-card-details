@@ -131,7 +131,7 @@ function returnToOriginalForm() {
             case "card-front-date":
                 paragraph.innerHTML = "00/00";
                 break;
-            case "card-bock-cvc":
+            case "card-back-cvc":
                 paragraph.innerHTML = "000";
                 break;
         }
