@@ -30,6 +30,8 @@ html {
     width: 25rem;
     height: 13.6rem;
     border-radius: 10px;
+    box-shadow: 9px 20px 60px rgba(0, 0, 0, 20%),
+        inset -3px 4px 45px rgba(0, 0, 0, 20%);
 }
 
 .card-front {
@@ -156,9 +158,9 @@ html {
 
 .btn-card {
     grid-area: c-btn;
-    height: 2.5rem;
+    height: 3rem;
     width: 100%;
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     color: white;
     background-color: hsl(278, 68%, 11%);
     font-family: "Space Grotesk", sans-serif;
@@ -198,7 +200,6 @@ html {
 
 .completed-state button {
     font-size: 1.2rem;
-    height: 3.2rem;
 }
 
 /* Responsive */
@@ -261,13 +262,9 @@ html {
     }
 
     .card-container {
-        margin-top: -1rem;
-        align-self: normal;
-    }
-
-    .card-container {
+        margin-top: 2.5rem;
+        align-self: flex-start;
         font-size: 85%;
-        margin-top: 3rem;
     }
 
     .card-front,
@@ -300,7 +297,7 @@ html {
     }
 }
 
-@media (max-width: 485px) {
+@media (max-width: 490px) {
     .card-container {
         font-size: 70%;
     }
