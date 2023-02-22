@@ -1,4 +1,5 @@
 // Credit card fields
+const cardContainer = document.querySelector(".card-container");
 const cardFrontNumber = document.querySelector("#card-front-number");
 const cardFrontName = document.querySelector("#card-front-name");
 const cardFrontDate = document.querySelector("#card-front-date");
@@ -20,6 +21,24 @@ formCard.addEventListener("keyup", (event) => {
     clearErrorMessages();
     const element = event.target;
 
+    getValuesOfInputsForm(element);
+});
+
+formCard.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let isNoErrors = validateEntriesCard();
+
+    if (isNoErrors) {
+        formCard.style.display = "none";
+        document.querySelector(".completed-state").style.display = "block";
+    }
+});
+
+document
+    .querySelector(".completed-state .btn-card")
+    .addEventListener("click", returnToOriginalForm);
+
+function getValuesOfInputsForm(element) {
     let isCardNameInput = element.className.includes("card-name");
     let isCardNumberInput = element.className.includes("card-number");
     let isCardDateInput = element.className.includes("card-exp-date");
@@ -50,18 +69,7 @@ formCard.addEventListener("keyup", (event) => {
     if (isCardCVCInput) {
         cardBackCVC.innerHTML = formCardCVC.value ? element.value : "000";
     }
-});
-
-formCard.addEventListener("submit", (event) => {
-    event.preventDefault();
-    let isNoErrors = validateEntriesCard();
-    console.log(isNoErrors);
-
-    if (isNoErrors) {
-        formCard.style.display = "none";
-        document.querySelector(".completed-state").style.display = "block";
-    }
-});
+}
 
 function validateEntriesCard() {
     let isNoErrors = true;
@@ -101,5 +109,31 @@ function clearErrorMessages() {
 
     document.querySelectorAll("input").forEach((input) => {
         input.style.removeProperty("border");
+    });
+}
+
+function returnToOriginalForm() {
+    document.querySelector(".completed-state").style.display = "none";
+    formCard.style.display = "grid";
+
+    document.querySelectorAll("input").forEach((input) => {
+        input.value = "";
+    });
+
+    cardContainer.querySelectorAll("p").forEach((paragraph) => {
+        switch (paragraph.id) {
+            case "card-front-name":
+                paragraph.innerHTML = "Jane Appleseed";
+                break;
+            case "card-front-number":
+                paragraph.innerHTML = "0000 0000 0000 0000";
+                break;
+            case "card-front-date":
+                paragraph.innerHTML = "00/00";
+                break;
+            case "card-bock-cvc":
+                paragraph.innerHTML = "000";
+                break;
+        }
     });
 }
