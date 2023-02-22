@@ -19,7 +19,7 @@ formCard.addEventListener("keyup", (event) => {
     clearErrorMessages();
     const element = event.target;
 
-    getValuesOfInputsForm(element);
+    displayEntryValuesOnCard(element);
 });
 
 formCard.addEventListener("submit", (event) => {
@@ -36,7 +36,7 @@ document
     .querySelector(".completed-state .btn-card")
     .addEventListener("click", returnToOriginalForm);
 
-function getValuesOfInputsForm(element) {
+function displayEntryValuesOnCard(element) {
     let isCardNameInput = element.className.includes("card-name");
     let isCardNumberInput = element.className.includes("card-number");
     let isCardDateInput = element.className.includes("card-exp-date");
