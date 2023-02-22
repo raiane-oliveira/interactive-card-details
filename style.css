@@ -132,7 +132,7 @@ html {
 .form-card input {
     border: 1px solid hsl(270, 3%, 87%);
     border-radius: 0.5rem;
-    height: 2.5rem;
+    height: 2.8rem;
     padding: 0.7rem 0.9rem;
     font-family: "Space Grotesk", sans-serif;
     font-size: 1rem;
@@ -198,6 +198,7 @@ html {
 
 .completed-state button {
     font-size: 1.2rem;
+    height: 3.2rem;
 }
 
 /* Responsive */
@@ -239,7 +240,7 @@ html {
 
     .card-back {
         position: absolute;
-        top: -140px;
+        top: -138px;
         margin-left: 5rem;
     }
 
@@ -260,13 +261,13 @@ html {
     }
 
     .card-container {
-        margin-top: 2rem;
+        margin-top: -1rem;
         align-self: normal;
     }
 
     .card-container {
-        font-size: 75%;
-        margin-top: -4rem;
+        font-size: 85%;
+        margin-top: 3rem;
     }
 
     .card-front,
@@ -276,7 +277,7 @@ html {
     }
 
     .card-back {
-        top: -104px;
+        top: -118px;
         margin-left: 5em;
     }
 
@@ -299,25 +300,24 @@ html {
     }
 }
 
-@media (max-width: 435px) {
+@media (max-width: 485px) {
+    .card-container {
+        font-size: 70%;
+    }
+
+    .card-back {
+        top: -97px;
+    }
+}
+
+@media (max-width: 410px) {
     html {
-        font-size: 95%;
+        font-size: 16px;
     }
 
     .card-container {
         font-size: 65%;
-        margin-top: -7rem;
-    }
-
-    .card-back {
-        top: -90px;
-    }
-}
-
-@media (max-width: 374px) {
-    .card-container {
-        font-size: 55%;
-        margin-top: -5rem;
+        margin-top: -4rem;
     }
 
     .card-front img {
@@ -331,5 +331,20 @@ html {
     #card-front-name,
     #card-front-date {
         font-size: 0.9em;
+    }
+
+    .card-back {
+        top: -90px;
+    }
+}
+
+@media (max-width: 374px) {
+    html {
+        font-size: 90%;
+    }
+
+    .card-container {
+        font-size: 55%;
+        margin-top: -6rem;
     }
 }
